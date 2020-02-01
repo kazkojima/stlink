@@ -533,6 +533,17 @@ static const struct stlink_chipid_params devices[] = {
             .bootrom_size = 0x7800           // 30K (table 2)
         },
         {
+            // STM32G031 (from RM0444)
+            .chip_id = STLINK_CHIPID_STM32_G031,
+            .description = "G031 device",
+            .flash_type = STLINK_FLASH_TYPE_G0,
+            .flash_size_reg = 0x1FFF75E0,    // Section 38.2
+            .flash_pagesize = 0x800,         // 2K (sec 3.2)
+            .sram_size = 0x2000,             // 8K (sec 2.3)
+            .bootrom_base = 0x1fff0000,
+            .bootrom_size = 0x7800           // 30K (table 2)
+        },
+        {
             // STM32WB55 (from RM0434)
             .chip_id = STLINK_CHIPID_STM32_WB55,
             .description = "WB55 device",
